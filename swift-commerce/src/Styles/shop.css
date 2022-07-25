@@ -1,0 +1,30 @@
+.shop-container{
+    /* display: flex; */
+    /* justify-content: space-between; */
+    border: 1px solid pink;
+    flex-direction: column;
+}
+.shop-container-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid pink;
+    height: 25px;
+}
+.shop-container-links{
+    display: flex;
+    margin-right: 100px;
+}
+.shop-title{
+    display: flex;
+    margin-left: 40px;
+    font-weight: bolder;
+}
+.shop-categories{
+    margin-right: 8px;
+    background-color: grey;
+    border-radius: 5px;
+    font-size: small;
+    height: 23px;
+    color: white;
+}

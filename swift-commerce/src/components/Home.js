@@ -1,12 +1,14 @@
 //Imports
 import React from 'react';
-import ShopHome from '../images/online-card-payment.webp'
+import '../index.css';
+//import ShopHome from '../images/online-card-payment.webp'
+import NavBar from './NavBar';
 
 
 function Home() {
   return (
-    <div>
-        <img src={ShopHome} alt='shop-home'/>
+    <div className='container-home'>
+        <NavBar/>
     </div>
   )
 }

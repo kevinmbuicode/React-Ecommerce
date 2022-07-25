@@ -15,22 +15,29 @@ code {
 
 .nav-container{
   display: flex;
-  border: 2px solid purple;
+  align-items: center;
   justify-content: space-between;
   
 }
 .nav-title{
   font-weight: 900;
   font-size: smaller;
-  margin-left: 8%;
+  color: aliceblue;
+  margin-left: 50%;
 }
 .nav-links{
   display: flex;
   margin-right: 8%;
-  /* border: 2px solid black; */
+  color: white;
+  margin-left: 100%;
 }
-.nav-links > p {
-  margin-right: 4%;
-  font-size: smaller;
 
+.nav-link-link {
+  font-size: x-small;
+  margin: 3%;
+}
+.container-home {
+  display: flex;
+  height: 350px;
+  background-image: url("./images/woman-with-shopping-bags.jpg");
 }
