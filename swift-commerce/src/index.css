@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -8,4 +11,26 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.nav-container{
+  display: flex;
+  border: 2px solid purple;
+  justify-content: space-between;
+  
+}
+.nav-title{
+  font-weight: 900;
+  font-size: smaller;
+  margin-left: 8%;
+}
+.nav-links{
+  display: flex;
+  margin-right: 8%;
+  /* border: 2px solid black; */
+}
+.nav-links > p {
+  margin-right: 4%;
+  font-size: smaller;
+
 }
