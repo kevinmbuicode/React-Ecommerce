@@ -1,7 +1,7 @@
 //Imports
-import React, {useState, useEffect} from "react";
+import React from "react";
 import '../Styles/shop.css';
-import Card from "./Product/Card";
+import Card from "./Card";
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
@@ -9,14 +9,7 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 
 function Shop() {
-    const [products, setProducts] = useState([]);
 
-  useEffect(()=> {
-    console.log("fetch occured")
-    fetch("https://fakestoreapi.com/products/1")
-    .then(res => res.json())
-    .then(data => console.log(data))
-  }, [])
 
     return ( 
         // Container and NavBar
