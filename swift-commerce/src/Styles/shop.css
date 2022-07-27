@@ -1,3 +1,4 @@
+/* Container and Shopping NavBar */
 .shop-container{
     /* display: flex; */
     /* justify-content: space-between; */
@@ -27,4 +28,11 @@
     font-size: small;
     height: 23px;
     color: white;
+}
+
+/* Grid */
+.grid-container{
+    display: grid;
+    grid-template-columns: 120px 550px 136px;
+    gap: 4px;
 }

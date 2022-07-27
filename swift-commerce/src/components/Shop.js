@@ -1,12 +1,25 @@
 //Imports
-import React from "react";
-import '../Styles/shop.css'
-//import NavBar from './NavBar';
+import React, {useState, useEffect} from "react";
+import '../Styles/shop.css';
+import Card from "./Product/Card";
 import { Link } from 'react-router-dom';
-import { Button } from "@mui/material";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+
 
 function Shop() {
+    const [products, setProducts] = useState([]);
+
+  useEffect(()=> {
+    console.log("fetch occured")
+    fetch("https://fakestoreapi.com/products/1")
+    .then(res => res.json())
+    .then(data => console.log(data))
+  }, [])
+
     return ( 
+        // Container and NavBar
         <div className="shop-container">
             <div className="shop-container-nav">
                 <div className="shop-title">
@@ -27,6 +40,24 @@ function Shop() {
                 <button className="shop-categories">Monitors</button>
                 <input type="search" className="shop-categories"/>
                 <button>Search</button>
+                <FontAwesomeIcon icon={faCoffee} />
+                
+            </div>
+
+            {/* Grid */}
+
+            <div className="grid-container">
+                <div className="bg-red-400">
+                    <h2>Clothing</h2>
+                    <p>Men</p>
+                    <p>Women</p>
+                    <p>Children</p>
+                    <p>Links</p>
+                </div>
+                <div className="bg-green-400">
+                    <Card/>
+                </div>
+                <div className="bg-red-400">01</div>
             </div>
             
         </div>
