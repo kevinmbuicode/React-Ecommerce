@@ -1,7 +1,9 @@
-function CheckOut() {
+import NavBar from "./NavBar";
+
+function CheckOut(props) {
     return ( 
         <div className='checkout-container'>
-            <p>Checking Out page</p>
+            {props.navBar}
         </div>
      );
 }

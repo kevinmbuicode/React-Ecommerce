@@ -6,6 +6,7 @@ import ProductView from './components/ProductView'
 import Shop from "./components/Shop";
 import { Routes, Route} from 'react-router-dom';
 import CheckOut from "./components/CheckOut";
+import NavBar from "./components/NavBar";
 
 
 
@@ -40,7 +41,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route exact path="/" element={<Home/>}/>
-        <Route exact path="/checkout" element={<CheckOut/>}/>
+        <Route exact path="/checkout" element={<CheckOut navBar={<NavBar/>}/>}/>
         <Route exact path="/shop" element={<Shop productElements={productElements}/>}/>
         <Route exact path="productview" 
         element={

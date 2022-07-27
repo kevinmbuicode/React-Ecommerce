@@ -53,7 +53,14 @@ function Shop(props) {
 
             <div className="grid-container">
                 <div className="bg-red-400">
-                    <h2>Clothing</h2>
+                    <input type='text' className='bg-gray-400 rounded-lg'/>
+                    <h2 className="font-bold">Category</h2>
+                    <p>Men</p>
+                    <p>Women</p>
+                    <p>Children</p>
+                    <p>Men</p>
+                    <p>Women</p>
+                    <p>Children</p>
                     <p>Men</p>
                     <p>Women</p>
                     <p>Children</p>
