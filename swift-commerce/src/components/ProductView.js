@@ -4,6 +4,7 @@ import ProductCardView from './ProductCardView';
 //onClick function from shop page at the Image click returns this element
 const ProductView = (props) => {
     console.log(props.productView)
+
     const items = props.productView.map(item => {
         console.log("map function occured")
         return(
@@ -21,9 +22,8 @@ const ProductView = (props) => {
 
     return(
         <div>
-            {console.log("You Viewed ProductView")}
             You viewed this product
-            {items}
+            {items.image}
             
             {/* <div>
                 <img src={`${props.image}`} alt="Card_Image" />

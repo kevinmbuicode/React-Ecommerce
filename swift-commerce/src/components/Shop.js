@@ -1,20 +1,24 @@
 //Imports
 import React from "react";
 import '../Styles/shop.css';
-//import Card from "./Card";
 import { Link, useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-
-
+//Image Imports
+import ShopEmpty from '../images/shopping-cart-colored.webp'
+//import ShopEmpty from '../images/shopping-cart-colored.webp'
+//import ShopFilled from '../images/shopping-cart-filled.png'
 
 function Shop(props) {
-    const navigate = useNavigate()
+     const navigate = useNavigate()
 
-  function handleClick() {
-    console.log("Link clicked");
-    navigate('/productview')
-  }
+//   function handleClick() {
+//     console.log("Link clicked");
+//     navigate('/productview')
+//   }
+
+//Moving to Checkout if cart is clicked
+    function handleCart() {
+        navigate('/checkout')
+    }
 
     return ( 
         // Container and NavBar
@@ -28,6 +32,11 @@ function Shop(props) {
                     <Link className='nav-link-link' to='/shop'><p>Shop</p></Link>
                     <Link className='nav-link-link' to='/shop'><p>About</p></Link>
                     <Link className='nav-link-link' to='/shop'><p>Contact</p></Link>
+                    <img src={`${ShopEmpty}`} 
+                    alt='shop_empty_icon' height='12px' width='20px' 
+                    onClick={handleCart}
+                    className="ml-2"
+                    />
                 </div>
             </div>
             <div className="shop-buttons">
@@ -38,8 +47,6 @@ function Shop(props) {
                 <button className="shop-categories">Monitors</button>
                 <input type="search" className="shop-categories"/>
                 <button>Search</button>
-                <FontAwesomeIcon icon={faCoffee} />
-                
             </div>
 
             {/* Grid */}
@@ -53,7 +60,7 @@ function Shop(props) {
                     <p>Links</p>
                 </div>
                 <div className="bg-green-400">
-                    <p className="flex flex-wrap" onClick={handleClick}>{props.productElements}</p>
+                    <p className="flex flex-wrap">{props.productElements}</p>
                 </div>
                 <div className="bg-red-400">01</div>
             </div>
