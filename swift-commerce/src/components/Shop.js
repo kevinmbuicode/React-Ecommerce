@@ -1,7 +1,7 @@
 //Imports
 import React from "react";
 import '../Styles/shop.css';
-import Card from "./Card";
+//import Card from "./Card";
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
@@ -9,25 +9,7 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 
 function Shop(props) {
-//     const [products, setProducts] = useState([]);
-     const navigate = useNavigate()
-
-//   useEffect(()=> {
-//     console.log("fetch occured")
-//     fetch("https://fakestoreapi.com/products")
-//     .then(res => res.json())
-//     .then(data => setProducts(data))
-//   }, [])
-
-//   const productElements = products.map(product => {
-//     return(
-//         <Card
-//         image={product.image}
-//         title={product.title}
-//         price={product.price}
-//         />
-//     )
-//   })
+    const navigate = useNavigate()
 
   function handleClick() {
     console.log("Link clicked");
