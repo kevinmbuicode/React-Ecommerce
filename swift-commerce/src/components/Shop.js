@@ -1,5 +1,5 @@
 //Imports
-import React from "react";
+import React, {useState, useEffect} from "react";
 import '../Styles/shop.css';
 import Card from "./Card";
 import { Link } from 'react-router-dom';
@@ -9,7 +9,24 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 
 function Shop() {
+    const [products, setProducts] = useState([]);
 
+  useEffect(()=> {
+    console.log("fetch occured")
+    fetch("https://fakestoreapi.com/products")
+    .then(res => res.json())
+    .then(data => setProducts(data))
+  }, [])
+
+  const productElements = products.map(product => {
+    return(
+        <Card
+        image={product.image}
+        title={product.title}
+        price={product.price}
+        />
+    )
+  })
 
     return ( 
         // Container and NavBar
@@ -47,8 +64,8 @@ function Shop() {
                     <p>Children</p>
                     <p>Links</p>
                 </div>
-                <div className="bg-green-400">
-                    <Card/>
+                <div className="bg-green-400 flex flex-wrap">
+                    {productElements}
                 </div>
                 <div className="bg-red-400">01</div>
             </div>
