@@ -2,18 +2,12 @@
 import React from "react";
 import '../Styles/shop.css';
 import { Link, useNavigate } from 'react-router-dom';
-//Image Imports
 import ShopEmpty from '../images/shopping-cart-colored.webp'
-//import ShopEmpty from '../images/shopping-cart-colored.webp'
 //import ShopFilled from '../images/shopping-cart-filled.png'
 
 function Shop(props) {
-     const navigate = useNavigate()
+    const navigate = useNavigate()
 
-//   function handleClick() {
-//     console.log("Link clicked");
-//     navigate('/productview')
-//   }
 
 //Moving to Checkout if cart is clicked
     function handleCart() {
@@ -37,14 +31,17 @@ function Shop(props) {
                     onClick={handleCart}
                     className="ml-2"
                     />
+                    <p>{props.count}</p>
                 </div>
+
+                {/* Categories */}
             </div>
             <div className="shop-buttons">
                 <button className="shop-categories">All</button>
-                <button className="shop-categories">Desktops</button>
-                <button className="shop-categories">Laptops</button>
-                <button className="shop-categories">Printers</button>
-                <button className="shop-categories">Monitors</button>
+                <button className="shop-categories">Jewellery</button>
+                <button className="shop-categories">Clothing</button>
+                <button className="shop-categories">Electronics</button>
+                <button className="shop-categories">Food</button>
                 <input type="search" className="shop-categories"/>
                 <button>Search</button>
             </div>
@@ -53,7 +50,7 @@ function Shop(props) {
 
             <div className="grid-container">
                 <div className="bg-red-400">
-                    <input type='text' className='bg-gray-400 rounded-lg'/>
+                    <input type='text' className='bg-gray-400 rounded-lg w-28' placeholder='Search Keywords'/>
                     <h2 className="font-bold">Category</h2>
                     <p>Men</p>
                     <p>Women</p>

@@ -23,7 +23,7 @@ const ProductView = (props) => {
     return(
         <div>
             You viewed this product
-            {items.image}
+            {items}
             
             {/* <div>
                 <img src={`${props.image}`} alt="Card_Image" />

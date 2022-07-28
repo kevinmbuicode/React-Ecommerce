@@ -4,15 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import '../Styles/card.css'
 
 //card component
-function Card({image, price, title}) {
+function Card({image, price, title, handleCount}) {
     const navigate = useNavigate()
-
-    //Handle buy button to add item to cart
-    function handleBuy() {
-        return(
-            console.log("Buy clicked, add item to cart")
-        )
-    }
 
     //Handle View function path to Product View
     function handleView() {
@@ -21,7 +14,7 @@ function Card({image, price, title}) {
     }
     
     return(
-        <div className="card-container mx-1">
+        <div className="card-container mx-1 mb-1">
             <div className="card-image">
                 <img src={`${image}`} alt="online-card" className='card-image-inner w-full h-20' />
             </div>
@@ -32,7 +25,7 @@ function Card({image, price, title}) {
                 </div>
                 <div>
                     <button className='flex flex-auto bg-slate-600' onClick={handleView}>View</button>
-                    <button className='flex flex-auto bg-slate-600' onClick={handleBuy}>Buy</button>
+                    <button className='flex flex-auto bg-slate-600' onClick={handleCount}>Add to Cart</button>
                 </div>
             </div>
         </div>

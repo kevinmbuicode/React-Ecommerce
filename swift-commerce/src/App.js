@@ -6,12 +6,21 @@ import ProductView from './components/ProductView'
 import Shop from "./components/Shop";
 import { Routes, Route} from 'react-router-dom';
 import CheckOut from "./components/CheckOut";
-import NavBar from "./components/NavBar";
+import About from './components/Pages/About'
+//import NavBar from "./components/NavBar";
 
 
 
 function App() {
+  const [count, setCount] = useState(0)
   const [products, setProducts] = useState([]);
+
+  //Count items in Count
+  const handleCount = () => {
+    return(
+      setCount(count => count + 1)
+    )
+  }
 
   //Fetching the data from fakestoreapi.com, adding empty dependency array to prevent looping fetch:
   useEffect(()=> {
@@ -31,7 +40,8 @@ function App() {
         price={product.price}
         description={product.description}
         rate={product.rating.rate}
-        count={product.rating.count}
+        // count={product.rating.count}
+        handleCount={handleCount}
         />
     )
   })
@@ -42,7 +52,12 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home/>}/>
         <Route exact path="/checkout" element={<CheckOut/>}/>
-        <Route exact path="/shop" element={<Shop productElements={productElements}/>}/>
+        <Route exact path="/about" element={<About/>}/>
+        <Route exact path="/shop" 
+        element={
+        <Shop 
+        count={count}
+        productElements={productElements}/>}/>
         <Route exact path="productview" 
         element={
         <ProductView
