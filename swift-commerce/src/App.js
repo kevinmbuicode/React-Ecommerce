@@ -41,7 +41,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route exact path="/" element={<Home/>}/>
-        <Route exact path="/checkout" element={<CheckOut navBar={<NavBar/>}/>}/>
+        <Route exact path="/checkout" element={<CheckOut/>}/>
         <Route exact path="/shop" element={<Shop productElements={productElements}/>}/>
         <Route exact path="productview" 
         element={
@@ -50,6 +50,7 @@ function App() {
         />
         }/>
       </Routes>
+      
     </div>
   );
 }
