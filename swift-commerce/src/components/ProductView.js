@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductCardView from './ProductCardView';
+import { useParams } from 'react-router-dom';
 
 //onClick function from shop page at the Image click returns this element
 const ProductView = (props) => {

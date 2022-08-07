@@ -58,10 +58,9 @@ function App() {
         <Shop 
         count={count}
         productElements={productElements}/>}/>
-        <Route exact path="productview" 
+        <Route exact path="productview/:id" 
         element={
         <ProductView
-          productView={productElements}
         />
         }/>
       </Routes>

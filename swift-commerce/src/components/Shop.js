@@ -1,7 +1,7 @@
 //Imports
 import React from "react";
 import '../Styles/shop.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import ShopEmpty from '../images/shopping-cart-colored.webp'
 //import ShopFilled from '../images/shopping-cart-filled.png'
 
