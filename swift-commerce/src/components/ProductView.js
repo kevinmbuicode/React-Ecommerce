@@ -5,6 +5,8 @@ import ProductCardView from './ProductCardView';
 const ProductView = (props) => {
     console.log(props.productView)
 
+
+    //React router can handle this logic.
     const items = props.productView.map(item => {
         console.log("map function occured")
         return(
