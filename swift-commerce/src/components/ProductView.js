@@ -19,23 +19,6 @@ const ProductView = () => {
         getProduct()
     }, [id])
 
-
-    //React router can handle this logic.
-    // const items = props.productView.map(item => {
-    //     console.log("map function occured")
-    //     return(
-    //         <ProductCardView
-    //             id={item.id}
-    //             image={item.image}
-    //             description={item.description}
-    //             title={item.title}
-    //             price={item.price}
-    //             rate={item.rating.rate}
-    //             count={item.rating.count}
-    //         />
-    //     )
-    // })
-
     return(
         <div>
             You viewed this product
@@ -44,6 +27,7 @@ const ProductView = () => {
             </div>
             <div className="image-details">
                 <p>{product.title}</p>
+                <p>$ {product.price}</p>
                 <p>{product.description}</p>
                 <p>{product.rate}</p>
                 <p>{product.count}</p>
