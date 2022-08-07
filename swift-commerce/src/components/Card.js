@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../Styles/card.css";
 
 //card component
-function Card({ image, price, title, handleCount }) {
+function Card({id, image, price, title, handleCount }) {
   const navigate = useNavigate();
 
   //Handle View function path to Product View
@@ -28,7 +28,7 @@ function Card({ image, price, title, handleCount }) {
           <p>$ {price}</p>
         </div>
         <div>
-          <Link to="/shop/:id">
+          <Link to={`/shop/${id}`}>
             <button
               className="flex flex-auto bg-slate-600"
               onClick={handleView}
