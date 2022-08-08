@@ -1,7 +1,7 @@
 //Imports
 import React from "react";
 import '../Styles/shop.css';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ShopEmpty from '../images/shopping-cart-colored.webp'
 //import ShopFilled from '../images/shopping-cart-filled.png'
 
@@ -13,6 +13,14 @@ function Shop(props) {
     function handleCart() {
         navigate('/checkout')
     }
+
+    // const filterProduct = (name) => {
+    //     return(
+    //         const result = props.product.filter(item => {
+
+    //         })
+    //     )
+    // }
 
     return ( 
         // Container and NavBar
@@ -37,11 +45,11 @@ function Shop(props) {
                 {/* Categories */}
             </div>
             <div className="shop-buttons">
-                <button className="shop-categories">All</button>
-                <button className="shop-categories">Jewellery</button>
-                <button className="shop-categories">Clothing</button>
-                <button className="shop-categories">Electronics</button>
-                <button className="shop-categories">Food</button>
+                <button className="shop-categories" onClick={()=>filterProduct=>(props.product)}>All</button>
+                <button className="shop-categories" onClick={()=>filterProduct=>("jewelery")}>Jewellery</button>
+                <button className="shop-categories" onClick={()=>filterProduct=>("men's clothing")}>Men's Clothing</button>
+                <button className="shop-categories" onClick={()=>filterProduct=>("electronics")}>Electronics</button>
+                <button className="shop-categories" onClick={()=>filterProduct=>("women's clothing")}>Women's Clothing</button>
                 <input type="search" className="shop-categories"/>
                 <button>Search</button>
             </div>
