@@ -1,11 +1,13 @@
 //Imports
-import React from "react";
+import React, { useState, useEffect }from "react";
 import '../Styles/shop.css';
 import { Link, useNavigate } from 'react-router-dom';
 import ShopEmpty from '../images/shopping-cart-colored.webp'
 //import ShopFilled from '../images/shopping-cart-filled.png'
 
 function Shop(props) {
+    const [ filter, setFilter ] = useState([]);
+    //const [ product, setProduct] = useState([]);
     const navigate = useNavigate()
 
 
@@ -14,13 +16,22 @@ function Shop(props) {
         navigate('/checkout')
     }
 
-    // const filterProduct = (name) => {
-    //     return(
-    //         const result = props.product.filter(item => {
 
-    //         })
-    //     )
-    // }
+    useEffect(() => {
+        const getProduct = async() => {
+            const response = await fetch('https://fakestoreapi.com/products')
+            const data = await response.json()
+            console.log(data)
+            setFilter(data)
+        }
+        getProduct()
+    },[])
+
+    //filter products by name selected 
+  const filterProduct = (name) => {
+    const newList = filter.filter((item)=> item.category === name);
+    setFilter(newList)
+  }
 
     return ( 
         // Container and NavBar
@@ -45,11 +56,11 @@ function Shop(props) {
                 {/* Categories */}
             </div>
             <div className="shop-buttons">
-                <button className="shop-categories" onClick={()=>filterProduct=>(props.product)}>All</button>
-                <button className="shop-categories" onClick={()=>filterProduct=>("jewelery")}>Jewellery</button>
-                <button className="shop-categories" onClick={()=>filterProduct=>("men's clothing")}>Men's Clothing</button>
-                <button className="shop-categories" onClick={()=>filterProduct=>("electronics")}>Electronics</button>
-                <button className="shop-categories" onClick={()=>filterProduct=>("women's clothing")}>Women's Clothing</button>
+                <button className="shop-categories" onClick={()=>filterProduct(filter)}>All</button>
+                <button className="shop-categories" onClick={()=>filterProduct("jewelery")}>Jewellery</button>
+                <button className="shop-categories" onClick={()=>filterProduct("men's clothing")}>Men's Clothing</button>
+                <button className="shop-categories" onClick={()=>filterProduct("electronics")}>Electronics</button>
+                <button className="shop-categories" onClick={()=>filterProduct("women's clothing")}>Women's Clothing</button>
                 <input type="search" className="shop-categories"/>
                 <button>Search</button>
             </div>
